@@ -8,6 +8,9 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.szamraj.recipe_app.model.Category;
+import com.szamraj.recipe_app.model.Recipe;
+
 class CategoryTest {
 
 	Category category;

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.szamraj</groupId>
-	<artifactId>spring_guru_9_spring_webapp3</artifactId>
+	<artifactId>recipe_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring_guru_9_spring_webapp3</name>
+	<name>recipe_app</name>
 	<description>Web Application Recipes</description>
 	<url/>
 	<licenses>

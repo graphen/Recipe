@@ -15,11 +15,13 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.szamraj.spring_guru_9_spring_webapp3.model.Recipe;
-import com.szamraj.spring_guru_9_spring_webapp3.command.RecipeCommand;
-import com.szamraj.spring_guru_9_spring_webapp3.repository.RecipeRepository;
-import com.szamraj.spring_guru_9_spring_webapp3.converter.RecipeToRecipeCommand;
-import com.szamraj.spring_guru_9_spring_webapp3.converter.RecipeCommandToRecipe;
+import com.szamraj.recipe_app.command.RecipeCommand;
+import com.szamraj.recipe_app.converter.RecipeCommandToRecipe;
+import com.szamraj.recipe_app.converter.RecipeToRecipeCommand;
+import com.szamraj.recipe_app.model.Recipe;
+import com.szamraj.recipe_app.repository.RecipeRepository;
+import com.szamraj.recipe_app.service.RecipeService;
+import com.szamraj.recipe_app.service.RecipeServiceImpl;
 
 
 class RecipeServiceImplTest {

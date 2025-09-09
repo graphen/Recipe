@@ -21,12 +21,13 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.szamraj.spring_guru_9_spring_webapp3.model.Recipe;
-import com.szamraj.spring_guru_9_spring_webapp3.command.RecipeCommand;
-import com.szamraj.spring_guru_9_spring_webapp3.service.RecipeService;
-import com.szamraj.spring_guru_9_spring_webapp3.service.IngredientService;
-import com.szamraj.spring_guru_9_spring_webapp3.service.UnitOfMeasureService;
-import com.szamraj.spring_guru_9_spring_webapp3.service.CategoryService;
+import com.szamraj.recipe_app.command.RecipeCommand;
+import com.szamraj.recipe_app.controller.RecipeController;
+import com.szamraj.recipe_app.model.Recipe;
+import com.szamraj.recipe_app.service.CategoryService;
+import com.szamraj.recipe_app.service.IngredientService;
+import com.szamraj.recipe_app.service.RecipeService;
+import com.szamraj.recipe_app.service.UnitOfMeasureService;
 
 
 
