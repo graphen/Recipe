@@ -1,4 +1,4 @@
-package com.szamraj.spring_guru_9_spring_webapp3;
+package com.szamraj.recipe_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

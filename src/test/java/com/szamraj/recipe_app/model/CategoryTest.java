@@ -1,4 +1,4 @@
-package com.szamraj.spring_guru_9_spring_webapp3.model;
+package com.szamraj.recipe_app.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 

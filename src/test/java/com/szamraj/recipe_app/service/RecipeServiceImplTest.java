@@ -1,4 +1,4 @@
-package com.szamraj.spring_guru_9_spring_webapp3.service;
+package com.szamraj.recipe_app.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
