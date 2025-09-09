@@ -1,61 +1,27 @@
 package com.szamraj.recipe_app.controller;
 
-import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import com.szamraj.recipe_app.model.Category;
-import com.szamraj.recipe_app.model.UnitOfMeasure;
-import com.szamraj.recipe_app.repository.CategoryRepository;
-import com.szamraj.recipe_app.repository.UnitOfMeasureRepository;
+import com.szamraj.recipe_app.command.RecipeCommand;
+import com.szamraj.recipe_app.service.RecipeService;
 
 @Controller
 public class IndexController {
-	
-	CategoryRepository categoryRepository;
-	UnitOfMeasureRepository unitOfMeasureRepository;
-	
-	public IndexController(CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
-		this.categoryRepository = categoryRepository;
-		this.unitOfMeasureRepository = unitOfMeasureRepository;
-	}
-
-	@RequestMapping({"/", "", "index", "index.html"})
-	public String index() {
-		return "index";
-	}
-	
-	@RequestMapping("/test")
-	public String test() {
-		Optional<Category> category1 = categoryRepository.findByDescription("Italian");
-		if(category1.isPresent()) {
-			System.out.println("Category found: " + category1.get().getDescription());
-		} else {
-			System.out.println("Category not found");
-		}
-		
-		Optional<Category> category2 = categoryRepository.findByDescription("Mexican");
-		if(category2.isPresent()) {
-			System.out.println("Category found: " + category2.get().getDescription());
-		} else {
-			System.out.println("Category not found");
-		}
-		
-		Optional<UnitOfMeasure> uom1 = unitOfMeasureRepository.findByDescription("Teaspoon");
-		if(uom1.isPresent()) {
-			System.out.println("UOM found: " + uom1.get().getDescription());
-		} else {
-			System.out.println("UOM not found");
-		}
-		
-		Optional<UnitOfMeasure> uom2 = unitOfMeasureRepository.findByDescription("Cupa");
-		if(uom2.isPresent()) {
-			System.out.println("UOM found: " + uom2.get().getDescription());
-		} else {
-			System.out.println("UOM not found");
-		}
-
-		return "index";
-	}
+    
+    private final RecipeService recipeService;
+    
+    public IndexController(RecipeService recipeService) {
+        this.recipeService = recipeService;
+    }
+    
+    @GetMapping({"/list", "/", ""})
+    public String listRecipes(Model model) {
+        Set<RecipeCommand> recipes = recipeService.getAllRecipes();
+        model.addAttribute("recipes", recipes);
+        return "recipes/list";
+    }
 }
